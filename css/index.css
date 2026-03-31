@@ -1,0 +1,70 @@
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html, body { height: 100%; background-color: rgb(219, 219, 219);}
+body { line-height: 1.5; -webkit-font-smoothing: antialiased; font-family: Arial, Helvetica, sans-serif; }
+img, picture, video, canvas, svg { display: block; max-width: 100%; }
+input, button, textarea, select { font: inherit; }
+p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+a { color: inherit; text-decoration: none; }
+ul, ol { padding: 0; list-style: none; }
+.btn{
+    border: none;
+    padding:8px 15px;
+    color:white;
+    background-color: rgb(80, 80, 160);
+    border-radius: 10px;
+    transition: 
+        background-color ease 150ms,
+        box-shadow ease 150ms,
+        color ease 150ms;
+}
+.usersList__deleteBtn{
+    background-color: rgb(193, 54, 82);
+}
+.usersList__card{
+    width: 250px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+.usersList__card>img{
+    aspect-ratio: 1/1;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.usersList{
+    display: flex;
+    gap: 30px;
+    max-width: 1440px;
+    margin: 100px auto;
+    flex-wrap:wrap ;
+}
+.usersList__buttons{
+    display: flex;
+    gap: 20px;
+}
+
+@media(hover:hover) and (pointer: fine){
+    .btn:hover{
+        background-color: rgb(98, 98, 196);   
+        box-shadow: 0 0 5px rgb(98, 98, 196);     
+    }
+    .usersList__deleteBtn:hover{
+        background-color: rgb(236, 46, 84);   
+        box-shadow: 0 0 5px rgb(196, 98, 109); 
+    }
+}
+.btn:active{
+    background-color: rgb(53, 53, 104);   
+    box-shadow: 0 0 5px rgba(98, 98, 196, 0);  
+    color: rgb(189, 189, 189);
+}
+.usersList__deleteBtn:active{
+    background-color: rgb(108, 24, 41);   
+    box-shadow: 0 0 5px rgba(196, 98, 109, 0); 
+}
