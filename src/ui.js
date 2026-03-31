@@ -1,7 +1,6 @@
-import {users} from "./data"
-import {getAge} from "./user"
-import {editUser} from "./user"
-import {deleteUser} from "./user"
+import {getAge} from "./user.js"
+import {editUser} from "./user.js"
+import {deleteUser} from "./user.js"
 
 function getUserCard (user){
 
@@ -26,12 +25,24 @@ function getUserCard (user){
     editBtn.addEventListener('click', editUser.bind(user))
     editBtn.textContent = "Edit";
 
-    const delitBtn = document.createElement('button')
-    delitBtn.classList.add('usersList__deleteBtn')
-    delitBtn.addEventListener('click', deleteUser.bind(user))
-    delitBtn.textContent = "Delete";
+    const deletBtn = document.createElement('button')
+    deletBtn.classList.add('usersList__deleteBtn')
+    deletBtn.addEventListener('click', deleteUser.bind(user))
+    deletBtn.textContent = "Delete";
 
-    cardBtnBox.append(editBtn,delitBtn)
+    cardBtnBox.append(editBtn,deletBtn)
     card.append(cardImg, cardH3, cardp, cardBtnBox)
+
     return card
 }
+
+export function renderUserList(users){
+    const usersList = document.createElement('ul')
+    usersList.classList.add('usersList')
+
+    for (let i = 0; i < users.length; i++) {
+        usersList.append(getUserCard(users[i]))
+    }
+    return usersList
+}
+
