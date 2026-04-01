@@ -5,11 +5,10 @@ export let users = [
   
 ]
 
-export function editUser(){
-
+export function editUser(user){
+  
 }
-export function deleteUser(){
-  const id = this.id 
-  users = users.filter(user => user.id !== id)
-  console.log("rg");
+
+export function deleteUserInArr(userId){
+  users = users.filter(user => user.id !== userId)
 }
